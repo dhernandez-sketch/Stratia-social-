@@ -1,0 +1,89 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    container_name: narrative_reports_db
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: narrative_reports
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U user -d narrative_reports"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    container_name: narrative_reports_redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  api:
+    build: .
+    container_name: narrative_reports_api
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=postgresql://user:password@postgres:5432/narrative_reports
+      - REDIS_URL=redis://redis:6379/0
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    volumes:
+      - .:/app
+      - uploads:/app/uploads
+      - reports:/app/reports
+
+  worker:
+    build: .
+    container_name: narrative_reports_worker
+    command: celery -A app.workers.celery_app worker --loglevel=info
+    environment:
+      - DATABASE_URL=postgresql://user:password@postgres:5432/narrative_reports
+      - REDIS_URL=redis://redis:6379/0
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    volumes:
+      - .:/app
+      - uploads:/app/uploads
+      - reports:/app/reports
+
+  flower:
+    build: .
+    container_name: narrative_reports_flower
+    command: celery -A app.workers.celery_app flower --port=5555
+    ports:
+      - "5555:5555"
+    environment:
+      - DATABASE_URL=postgresql://user:password@postgres:5432/narrative_reports
+      - REDIS_URL=redis://redis:6379/0
+    depends_on:
+      - redis
+      - worker
+
+volumes:
+  postgres_data:
+  redis_data:
+  uploads:
+  reports:

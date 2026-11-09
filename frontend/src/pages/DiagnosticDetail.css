@@ -1,0 +1,469 @@
+.diagnostic-detail {
+  padding: 2rem;
+}
+
+.loading {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.2rem;
+  color: #7f8c8d;
+}
+
+.error {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.2rem;
+  color: #e74c3c;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.page-header h2 {
+  margin: 0 0 0.5rem 0;
+  color: #2c3e50;
+  font-size: 2rem;
+}
+
+.diagnostic-meta {
+  margin: 0;
+  color: #7f8c8d;
+  font-size: 0.95rem;
+}
+
+.header-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.diagnostic-content {
+  margin-bottom: 2rem;
+}
+
+.foda-analysis {
+  background: white;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.foda-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.foda-section {
+  padding: 1.5rem;
+  border-radius: 10px;
+  border-left: 4px solid;
+}
+
+.foda-section.strength {
+  background-color: #d4edda;
+  border-left-color: #28a745;
+}
+
+.foda-section.weakness {
+  background-color: #f8d7da;
+  border-left-color: #dc3545;
+}
+
+.foda-section.opportunity {
+  background-color: #d1ecf1;
+  border-left-color: #17a2b8;
+}
+
+.foda-section.threat {
+  background-color: #fff3cd;
+  border-left-color: #ffc107;
+}
+
+.foda-section h4 {
+  margin: 0 0 1rem 0;
+  font-size: 1.1rem;
+  color: #2c3e50;
+}
+
+.foda-section ul {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.foda-section li {
+  margin-bottom: 0.5rem;
+  color: #555;
+}
+
+.strategies-section,
+.scores-section {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #eee;
+}
+
+.strategies-section h4,
+.scores-section h4 {
+  margin: 0 0 1rem 0;
+  color: #2c3e50;
+  font-size: 1.2rem;
+}
+
+.strategies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.strategy-group {
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.strategy-group h5 {
+  margin: 0 0 0.5rem 0;
+  color: #667eea;
+  font-size: 1rem;
+}
+
+.strategy-group ul {
+  margin: 0;
+  padding-left: 1rem;
+}
+
+.strategy-group li {
+  margin-bottom: 0.25rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.scores-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.score-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  background-color: #f8f9fa;
+  border-radius: 5px;
+}
+
+.score-label {
+  font-weight: 500;
+  color: #2c3e50;
+  text-transform: capitalize;
+}
+
+.score-value {
+  font-weight: 700;
+  color: #667eea;
+  font-size: 1.2rem;
+}
+
+.strategic-plan {
+  background: white;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.plan-section {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #eee;
+}
+
+.plan-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.plan-section h4 {
+  margin: 0 0 1rem 0;
+  color: #2c3e50;
+  font-size: 1.3rem;
+}
+
+.plan-section p {
+  color: #555;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.plan-section ul {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.plan-section li {
+  margin-bottom: 0.5rem;
+  color: #555;
+}
+
+.objectives-grid,
+.projects-grid,
+.risks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.objective-card,
+.project-card,
+.risk-card {
+  background-color: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 10px;
+  border-left: 4px solid #667eea;
+}
+
+.objective-card h5,
+.project-card h5,
+.risk-card h5 {
+  margin: 0 0 0.5rem 0;
+  color: #2c3e50;
+  font-size: 1.1rem;
+}
+
+.objective-card p,
+.project-card p,
+.risk-card p {
+  margin: 0 0 1rem 0;
+  color: #555;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.indicators {
+  margin-top: 1rem;
+}
+
+.indicators strong {
+  color: #2c3e50;
+  font-size: 0.9rem;
+}
+
+.indicators ul {
+  margin: 0.5rem 0 0 0;
+  padding-left: 1rem;
+}
+
+.indicators li {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.project-meta {
+  color: #7f8c8d;
+  font-size: 0.85rem;
+}
+
+.risk-meta {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.risk-level {
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.risk-level.alta,
+.risk-level.alto {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.risk-level.media,
+.risk-level.medio {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.risk-level.baja,
+.risk-level.bajo {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.generic-results {
+  background: white;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.generic-results pre {
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-radius: 5px;
+  overflow-x: auto;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.recommendations-section {
+  background: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.recommendations-section h3 {
+  margin: 0 0 1.5rem 0;
+  color: #2c3e50;
+  font-size: 1.3rem;
+}
+
+.recommendations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.recommendation-card {
+  background-color: #e8f0fe;
+  padding: 1rem;
+  border-radius: 5px;
+  border-left: 4px solid #667eea;
+  position: relative;
+}
+
+.recommendation-card p {
+  margin: 0 0 0.5rem 0;
+  color: #2c3e50;
+  font-size: 0.95rem;
+}
+
+.priority-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.priority-badge.high {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.priority-badge.medium {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.priority-badge.low {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background-color: #764ba2;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: #6a3f8f;
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: #667eea;
+  border: 2px solid #667eea;
+}
+
+.btn-outline:hover {
+  background-color: #667eea;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .diagnostic-detail {
+    padding: 1rem;
+  }
+  
+  .page-header {
+    flex-direction: column;
+  }
+  
+  .header-actions {
+    width: 100%;
+    flex-direction: column;
+  }
+  
+  .foda-analysis,
+  .strategic-plan,
+  .generic-results,
+  .recommendations-section {
+    padding: 1rem;
+  }
+  
+  .foda-grid,
+  .strategies-grid,
+  .scores-grid,
+  .objectives-grid,
+  .projects-grid,
+  .risks-grid,
+  .recommendations-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media print {
+  .header-actions,
+  .btn {
+    display: none !important;
+  }
+  
+  .diagnostic-detail {
+    padding: 0;
+  }
+  
+  .foda-analysis,
+  .strategic-plan,
+  .generic-results,
+  .recommendations-section {
+    box-shadow: none;
+  }
+}
